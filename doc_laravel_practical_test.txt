@@ -1,0 +1,43 @@
+Documentation: Laravel Practical Test
+
+Commands for set up
+	laravel new laravel_practical_test
+	composer require laravel/ui
+	php artisan ui vue --auth
+	npm install
+	npm run dev
+	
+Created Database
+	DB Name: laravel_practical_test
+	DB User: root
+	DB Pass: 
+	DB Host: localhost
+	
+Change .env file for database config
+	DB_CONNECTION=mysql
+	DB_HOST=127.0.0.1
+	DB_PORT=3306
+	DB_DATABASE=laravel_practical_test
+	DB_USERNAME=root
+	DB_PASSWORD=
+	
+Migration
+	php artisan make:migration create_category_table
+	php artisan migrate
+	
+Model
+	php artisan ake:model Category
+
+Seeder
+	php artisan make:seeder AdminTableSeeder
+	php artisan make:seeder CategoryTableSeeder
+	php artisan db:seed --class=AdminTableSeeder
+	php artisan db:seed --class=CategoryTableSeeder
+
+Alter Table
+	composer require doctrine/dbal
+	php artisan make:migration rename_email_in_categories_table --table=categories
+	php artisan migrate
+	
+Email
+php artisan make:mail AddCategoryMail
